@@ -1,0 +1,108 @@
+/* styles.css */
+
+.booking-page {
+    padding: 20px;
+}
+
+.flight-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.flight-card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex; /* Чтобы элементы внутри выстроились в ряд */
+    flex-direction: column; /* Содержимое в столбец */
+    justify-content: space-between; /* Равномерное распределение элементов */
+}
+
+.flight-card:hover {
+    transform: scale(1.01);
+    z-index: 1;
+    transition: transform .5s;
+}
+
+.flight-card .image-container {
+    height: 200px; /* Высота изображения */
+    overflow: hidden; /* Обрезать изображение, если оно больше контейнера */
+    border-radius: 8px; /* Скругленные углы для контейнера изображения */
+}
+
+.flight-card .image-container img {
+    width: 100%; /* Занимать всю доступную ширину */
+    height: 100%; /* Занимать всю доступную высоту */
+    object-fit: cover; /* Масштабировать изображение, чтобы оно полностью покрывало контейнер */
+}
+
+.flight-card .flight-details {
+    margin-top: 10px;
+}
+
+.flight-card h3 {
+    margin-bottom: 10px;
+}
+
+.flight-card p {
+    margin-bottom: 5px;
+}
+
+.flight-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.flight-card button:hover {
+    background-color: #0056b3;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #2e2e2e;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    color: white;
+    text-align: center;
+}
+
+.modal-close {
+    background: #4080df;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.book-button {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+}

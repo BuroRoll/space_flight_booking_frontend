@@ -1,0 +1,118 @@
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.login_form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    gap: 16px;
+    width: 100%;
+}
+
+.login_inputs {
+    border-radius: 8px;
+    min-height: 25px;
+    border: none;
+    width: 100%;
+    background-color: #F1F4F7;
+    height: 40px;
+    text-indent: 16px;
+}
+
+.login_btn {
+    border-radius: 8px;
+    border-style: unset;
+    background-color: #4080DF;
+    width: 100%;
+    color: white;
+    height: 45px;
+}
+
+.error_element {
+    text-align: center;
+    color: #dc3737;
+}
+
+#left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: url('https://cdn.iz.ru/sites/default/files/styles/1920x1080/public/article-2022-12/2187705832.jpg?itok=kYrrTCol') no-repeat center center;
+    background-size: cover;
+}
+
+#right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login_image {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.right_block {
+    margin: 0 200px 0 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.password_params {
+    display: flex;
+    justify-content: space-between;
+}
+
+.label_login {
+    display: inline-block;
+    margin-bottom: 8px;
+    margin-left: 8px;
+}
+
+.register_login_block {
+    text-align: center;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 25px auto 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.toggle_btn {
+    border: none;
+    background: none;
+    color: #4080DF;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 0;
+}

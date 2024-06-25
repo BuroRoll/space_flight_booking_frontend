@@ -1,0 +1,126 @@
+
+
+
+.view-flights-button:hover {
+    background-color: #63b8ff;
+}
+
+
+.card {
+    display: flex;
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    flex-direction: row;
+    align-items: center;
+    padding: 32px;
+}
+
+.card img {
+    width: 50%; /* Ширина изображения составляет половину карточки */
+    height: auto; /* Автоматическая высота для подстройки размера */
+    object-fit: cover; /* Растягивание изображения по размерам блока */
+}
+
+.card-content {
+    padding: 20px;
+    flex: 1; /* Растягивает контент, чтобы занимать всё доступное пространство */
+}
+
+.card-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-content .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #3498db;
+    border: 2px solid #2980b9;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.card-content .button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* styles.css */
+
+
+/* styles.css */
+
+.booking-page {
+    padding: 20px;
+    margin-top: 10vh;
+}
+
+.flight-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Центрируем карточки по горизонтали */
+    gap: 20px;
+}
+
+.flight-card {
+    width: 300px; /* Ширина карточки */
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex; /* Элементы внутри карточки выстраиваем в столбец */
+    flex-direction: column;
+    justify-content: space-between; /* Равномерное распределение элементов */
+}
+
+.flight-card .image-container {
+    height: 200px; /* Высота изображения */
+    overflow: hidden; /* Обрезать изображение, если оно больше контейнера */
+    border-radius: 8px; /* Скругленные углы для контейнера изображения */
+}
+
+.flight-card .image-container img {
+    width: 100%; /* Занимать всю доступную ширину */
+    height: 100%; /* Занимать всю доступную высоту */
+    object-fit: cover; /* Масштабировать изображение, чтобы оно полностью покрывало контейнер */
+}
+
+.flight-card .flight-details {
+    margin-top: 10px;
+}
+
+.flight-card h3 {
+    margin-bottom: 10px;
+}
+
+.flight-card p {
+    margin-bottom: 5px;
+}
+
+.flight-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.flight-card button:hover {
+    background-color: #0056b3;
+}
