@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://buroroll-spaceflightbooking-494b.twc1.net/docs';
+const API_URL = 'https://buroroll-spaceflightbooking-494b.twc1.net';
 
 const api = axios.create({
     baseURL: API_URL,
