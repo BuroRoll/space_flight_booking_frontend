@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const API_URL = 'https://buroroll-spaceflightbooking-494b.twc1.net';
+// const API_URL = 'http://127.0.0.1:8000';
 
 const api = axios.create({
     baseURL: API_URL,
@@ -34,15 +35,6 @@ export const login = async (email, password) => {
     }
 };
 
-// export const getFlights = async () => {
-//     try {
-//         const response = await api.get('/flights/');
-//         return response.data;
-//     } catch (error) {
-//         throw error.response.data;
-//     }
-// };
-
 export const getFlights = async () => {
     const response = await fetch(`${API_URL}/flights/`);
     if (!response.ok) {
@@ -65,20 +57,6 @@ export const createFlight = async (flight) => {
     return await response.json();
 };
 
-// export const createBooking = async (booking) => {
-//     const response = await fetch(`${API_URL}/bookings/`, {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(booking),
-//     });
-//     if (!response.ok) {
-//         throw new Error('Failed to create booking');
-//     }
-//     return await response.json();
-// };
-
 export const getUserInfo = async () => {
     let token = localStorage.getItem('token')
     try {
@@ -93,14 +71,15 @@ export const getUserInfo = async () => {
     }
 };
 
-export const createBooking = async (destination, price, flight_id) => {
+export const createBooking = async (destination, price, flight_id, date) => {
     let token = localStorage.getItem('token')
     try {
         const response = await api.post('/bookings/',
             {
                 'destination': destination,
                 'price': price,
-                'flight_id': flight_id
+                'flight_id': flight_id,
+                'date': date
             },
             {
                 headers: {
