@@ -15,9 +15,9 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex; /* Чтобы элементы внутри выстроились в ряд */
-    flex-direction: column; /* Содержимое в столбец */
-    justify-content: space-between; /* Равномерное распределение элементов */
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
     color: black;
     margin: 16px;
 }
@@ -88,8 +88,8 @@
     border-radius: 4px;
 }
 
-.book-button {
-    background: #4caf50;
+.cancel-book-button {
+    background: #ee3e3e;
     color: white;
     border: none;
     padding: 10px 20px;
