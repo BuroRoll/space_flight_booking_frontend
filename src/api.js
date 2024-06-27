@@ -34,14 +34,50 @@ export const login = async (email, password) => {
     }
 };
 
+// export const getFlights = async () => {
+//     try {
+//         const response = await api.get('/flights/');
+//         return response.data;
+//     } catch (error) {
+//         throw error.response.data;
+//     }
+// };
+
 export const getFlights = async () => {
-    try {
-        const response = await api.get('/flights/');
-        return response.data;
-    } catch (error) {
-        throw error.response.data;
+    const response = await fetch(`${API_URL}/flights/`);
+    if (!response.ok) {
+        throw new Error('Failed to fetch flights');
     }
+    return await response.json();
 };
+
+export const createFlight = async (flight) => {
+    const response = await fetch(`${API_URL}/flights/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(flight),
+    });
+    if (!response.ok) {
+        throw new Error('Failed to create flight');
+    }
+    return await response.json();
+};
+
+// export const createBooking = async (booking) => {
+//     const response = await fetch(`${API_URL}/bookings/`, {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(booking),
+//     });
+//     if (!response.ok) {
+//         throw new Error('Failed to create booking');
+//     }
+//     return await response.json();
+// };
 
 export const getUserInfo = async () => {
     let token = localStorage.getItem('token')
@@ -56,16 +92,23 @@ export const getUserInfo = async () => {
         throw error.response.data;
     }
 };
-//
-// export const createBooking = async (booking, token) => {
-//     try {
-//         const response = await api.post('/bookings/', booking, {
-//             headers: {
-//                 'Authorization': `Bearer ${token}`
-//             }
-//         });
-//         return response.data;
-//     } catch (error) {
-//         throw error.response.data;
-//     }
-// };
+
+export const createBooking = async (destination, price, flight_id) => {
+    let token = localStorage.getItem('token')
+    try {
+        const response = await api.post('/bookings/',
+            {
+                'destination': destination,
+                'price': price,
+                'flight_id': flight_id
+            },
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};

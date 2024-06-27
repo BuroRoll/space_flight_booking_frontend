@@ -4,13 +4,13 @@
     padding: 20px;
 }
 
-.flight-cards {
+.simple-flight-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
 }
 
-.flight-card {
+.simple-flight-card {
     background-color: #f0f0f0;
     padding: 20px;
     border-radius: 8px;
@@ -18,40 +18,31 @@
     display: flex; /* Чтобы элементы внутри выстроились в ряд */
     flex-direction: column; /* Содержимое в столбец */
     justify-content: space-between; /* Равномерное распределение элементов */
-
+    color: black;
+    margin: 16px;
 }
 
-.flight-card:hover {
+.simple-flight-card:hover {
     transform: scale(1.01);
     z-index: 1;
     transition: transform .5s;
 }
 
-.flight-card .image-container {
-    height: 200px; /* Высота изображения */
-    overflow: hidden; /* Обрезать изображение, если оно больше контейнера */
-    border-radius: 8px; /* Скругленные углы для контейнера изображения */
-}
 
-.flight-card .image-container img {
-    width: 100%; /* Занимать всю доступную ширину */
-    height: 100%; /* Занимать всю доступную высоту */
-    object-fit: cover; /* Масштабировать изображение, чтобы оно полностью покрывало контейнер */
-}
 
-.flight-card .flight-details {
+.simple-flight-card .flight-details {
     margin-top: 10px;
 }
 
-.flight-card h3 {
+.simple-flight-card h3 {
     margin-bottom: 10px;
 }
 
-.flight-card p {
+.simple-flight-card p {
     margin-bottom: 5px;
 }
 
-.flight-card button {
+.simple-flight-card button {
     background-color: #007bff;
     color: white;
     border: none;
@@ -60,7 +51,7 @@
     cursor: pointer;
 }
 
-.flight-card button:hover {
+.simple-flight-card button:hover {
     background-color: #0056b3;
 }
 
@@ -106,42 +97,4 @@
     cursor: pointer;
     border-radius: 4px;
     margin-left: 10px;
-}
-
-.booking-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.booking-form div {
-    margin-bottom: 15px;
-    width: 100%;
-}
-
-.booking-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.booking-form input {
-    width: 80%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.booking-form button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.booking-form button:hover {
-    background-color: #218838;
 }

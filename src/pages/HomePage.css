@@ -1,5 +1,5 @@
 .homepage {
-    background: url('https://w.forfun.com/fetch/b7/b74f2ebb03086b984504457dc8a84505.jpeg') no-repeat center  center fixed;
+    background: url('https://scientificrussia.ru/images/y/335y-full.jpg') no-repeat center  center fixed;
     background-size: 100% 100%;
     font-family: Arial, sans-serif;
     color: #fff;
@@ -12,6 +12,20 @@
     align-items: center;
     justify-content: center;
     position: relative;
+}
+
+.spaceman{
+    height: 45vh;
+    animation: floatAnimation 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0); /* Начальное положение - без смещения по вертикали */
+    }
+    100% {
+        transform: translateY(-10px); /* Конечное положение - смещение вверх на 10px */
+    }
 }
 
 .hero .content {

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import FlightCard from '../components/FlightCard';
 import './ProfilePage.css';
 import {getFlights, getUserInfo} from "../api";
+import SimpleFlightCard from "../components/SimpleFlightCard";
 
 const ProfilePage = () => {
     const [activeSection, setActiveSection] = useState('information');
@@ -53,7 +53,7 @@ const ProfilePage = () => {
                     <div className="profile-bookings">
                         <h2>История бронирований</h2>
                         {user.bookings.map(booking => (
-                            <FlightCard key={booking.id} flight={booking}/>
+                            <SimpleFlightCard key={booking.id} flight={booking}/>
                         ))}
                     </div>
                 );

@@ -39,7 +39,8 @@ function HomePage() {
                     <h1>{headerText}</h1>
                     {headerText === "Welcome to Space Travel Booking" && (
                         <>
-                            <p>Отправляйтесь в завораживающее путешествие между звезд! Бронируй билеты уже сейчас!</p>
+                            <img className="spaceman" src={'https://www.pngall.com/wp-content/uploads/5/Astronaut-Space-PNG-File.png'} alt={''}/>
+                            <h2>Отправляйтесь в завораживающее путешествие между звезд!<br/> Бронируй билеты уже сейчас!</h2>
                             <button onClick={handleViewFlights} className="view-flights-button">
                                 Забронировать сейчас
                             </button>

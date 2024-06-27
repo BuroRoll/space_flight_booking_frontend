@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import './Header.css';
+import {getUserInfo} from "../api";
 
 function Header() {
-    let token = localStorage.getItem('token')
+    let [token, setToken] = useState(localStorage.getItem('token'))
+    useEffect(() => {
+        setToken(localStorage.getItem('token'))
+    }, );
     return (
         <header className="header">
             <div className="container">
