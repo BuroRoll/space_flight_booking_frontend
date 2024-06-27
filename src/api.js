@@ -111,3 +111,4 @@ export const updateUser = async (name, surname, email) => {
         throw error.response.data;
     }
 };
+
