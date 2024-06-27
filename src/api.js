@@ -91,3 +91,23 @@ export const createBooking = async (destination, price, flight_id, date) => {
         throw error.response.data;
     }
 };
+
+export const updateUser = async (name, surname, email) => {
+    let token = localStorage.getItem('token')
+    try {
+        const response = await api.put('/users/me',
+            {
+                'name': name,
+                'surname': surname,
+                'email': email,
+            },
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};
