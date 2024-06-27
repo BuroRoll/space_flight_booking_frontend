@@ -1,11 +1,11 @@
 // FlightCard.jsx
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './FlightCard.css';
 import {createBooking} from "../api";
 import {useNavigate} from "react-router-dom";
 
-function FlightCard({ flight }) {
-    const { id, destination, price, date, description, planet_image } = flight;
+function FlightCard({flight}) {
+    const {id, destination, price, date, description, planet_image} = flight;
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isBookingFormOpen, setIsBookingFormOpen] = useState(false);
     const [formData, setFormData] = useState({
@@ -28,16 +28,15 @@ function FlightCard({ flight }) {
 
     const handleOpenBookingForm = () => {
         let token = localStorage.getItem('token')
-        if(token){
+        if (token) {
             setIsBookingFormOpen(true);
-        }else {
+        } else {
             navigate('/login');
         }
-
     };
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
+        const {name, value} = e.target;
         setFormData((prevData) => ({
             ...prevData,
             [name]: value,
@@ -46,15 +45,17 @@ function FlightCard({ flight }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        createBooking(destination, price, id, date)
-        setIsBookingFormOpen(false);
+        createBooking(destination, price, id, date).then(r => {
+            console.log(r)
+            setIsBookingFormOpen(false);
+        })
     };
 
     return (
         <>
             <div className="flight-card" onClick={handleOpenModal}>
                 <div className="image-container">
-                    <img src={planet_image} alt={`${destination} planet`} />
+                    <img src={planet_image} alt={`${destination} planet`}/>
                 </div>
                 <div className="flight-details">
                     <h3>{destination}</h3>
