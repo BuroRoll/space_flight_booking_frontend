@@ -48,6 +48,7 @@ function FlightCard({flight}) {
         createBooking(destination, price, id, date).then(r => {
             console.log(r)
             setIsBookingFormOpen(false);
+            setIsModalOpen(false);
         })
     };
 
