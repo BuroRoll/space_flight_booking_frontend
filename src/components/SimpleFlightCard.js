@@ -5,12 +5,17 @@ function SimpleFlightCard({flight}) {
     const {destination, price, date, description, planet_image} = flight;
     const [isModalOpen, setIsModalOpen] = useState(false);
     const handleOpenModal = () => {
-        setIsModalOpen(true);
+        // setIsModalOpen(true);
+        setIsModalOpen(false);
     };
 
     const handleCloseModal = () => {
         setIsModalOpen(false);
     };
+
+    const cancelBooking = () => {
+
+    }
 
     return (
         <>
@@ -27,9 +32,8 @@ function SimpleFlightCard({flight}) {
                         <h2>Подробности рейса</h2>
                         <p>Направление: {flight.destination}</p>
                         <p>Дата: {flight.date}</p>
-                        <p>Описание: {flight.description}</p>
                         <button className="modal-close" onClick={handleCloseModal}>Закрыть</button>
-                        <button className="book-button">Забронировать</button>
+                        <button className="cancel-book-button" onClick={cancelBooking}>Отменить бронь</button>
                     </div>
                 </div>
             )}
