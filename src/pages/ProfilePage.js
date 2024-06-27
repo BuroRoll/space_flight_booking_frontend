@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './ProfilePage.css';
-import {getFlights, getUserInfo} from "../api";
+import {getUserInfo, updateUser} from "../api";
 import SimpleFlightCard from "../components/SimpleFlightCard";
 
 const ProfilePage = () => {
@@ -26,7 +26,7 @@ const ProfilePage = () => {
     }, []);
 
     const handleSave = () => {
-        updateUser(name, surname, email);
+        updateUser(name, surname, email).then(r => console.log(r));
     };
 
     const renderSection = () => {
