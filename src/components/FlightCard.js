@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import './FlightCard.css';
 import {createBooking} from "../api";
+import {useNavigate} from "react-router-dom";
 
 function FlightCard({ flight }) {
     const { id, destination, price, date, description, planet_image } = flight;
@@ -11,8 +12,10 @@ function FlightCard({ flight }) {
         name: '',
         email: '',
         phone: '',
-        additional_data: ''
+        additional_data: '',
+        date: ''
     });
+    const navigate = useNavigate();
 
     const handleOpenModal = () => {
         setIsModalOpen(true);
@@ -24,7 +27,13 @@ function FlightCard({ flight }) {
     };
 
     const handleOpenBookingForm = () => {
-        setIsBookingFormOpen(true);
+        let token = localStorage.getItem('token')
+        if(token){
+            setIsBookingFormOpen(true);
+        }else {
+            navigate('/login');
+        }
+
     };
 
     const handleChange = (e) => {
@@ -37,9 +46,7 @@ function FlightCard({ flight }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        createBooking(destination, price, id)
-        // console.log('Booking data:', formData);
-        // Закрываем форму бронирования после отправки
+        createBooking(destination, price, id, date)
         setIsBookingFormOpen(false);
     };
 
