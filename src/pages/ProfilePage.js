@@ -5,17 +5,8 @@ import SimpleFlightCard from "../components/SimpleFlightCard";
 
 const ProfilePage = () => {
     const [activeSection, setActiveSection] = useState('information');
-    const [user, setUser] = useState(null)
-    // const user = {
-    //     name: 'Иван Иванов',
-    //     email: 'ivan@example.com',
-    //     joined: '01-01-2023',
-    //     bookings: [
-    //         { id: 1, destination: 'Луна', date: '2023-05-01', description: 'Путешествие на Луну' },
-    //         { id: 2, destination: 'Марс', date: '2023-07-15', description: 'Экспедиция на Марс' },
-    //         { id: 3, destination: 'Международная космическая станция', date: '2023-10-30', description: 'Посещение МКС' }
-    //     ]
-    // };
+    const [user, setUser] = useState({name: '', email:'', surname: ''})
+
     useEffect(() => {
         const getUserData = async () => {
             try {
@@ -35,17 +26,16 @@ const ProfilePage = () => {
                     <div className="profile-info">
                         <div className="profile-item">
                             <label>Имя:</label>
-                            {/*{user ? null : <span>{user.name}</span>}*/}
-
+                            <span>{user.name}</span>
+                        </div>
+                        <div className="profile-item">
+                            <label>Фамилия:</label>
+                            <span>{user.surname}</span>
                         </div>
                         <div className="profile-item">
                             <label>Электронная почта:</label>
-                            {/*{user ? null : <span>{user.email}</span>}*/}
-
+                            <span>{user.email}</span>
                         </div>
-                        {/*<div className="profile-item">*/}
-                        {/*    <label>Дата регистрации:</label>*/}
-                        {/*</div>*/}
                     </div>
                 );
             case 'bookings':
@@ -73,8 +63,8 @@ const ProfilePage = () => {
                 <ul>
                     <li onClick={() => setActiveSection('information')}>Информация</li>
                     <li onClick={() => setActiveSection('bookings')}>История бронирований</li>
-                    <li onClick={() => setActiveSection('space-map')}>Космическая карта</li>
-                    <li onClick={() => setActiveSection('settings')}>Настройки</li>
+                    {/*<li onClick={() => setActiveSection('space-map')}>Космическая карта</li>*/}
+                    {/*<li onClick={() => setActiveSection('settings')}>Настройки</li>*/}
                 </ul>
             </div>
             <div className="profile-container">
